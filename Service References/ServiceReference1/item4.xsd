@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfService1" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfService1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.1.101:27401/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfTestsTheme">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TestsTheme" nillable="true" type="tns:TestsTheme" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTestsTheme" nillable="true" type="tns:ArrayOfTestsTheme" />
+  <xs:complexType name="TestsTheme">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tests" nillable="true" type="tns:ArrayOfTest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TestsTheme" nillable="true" type="tns:TestsTheme" />
+  <xs:complexType name="ArrayOfTest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Test" nillable="true" type="tns:Test" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTest" nillable="true" type="tns:ArrayOfTest" />
+  <xs:complexType name="Test">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Tasks" nillable="true" type="tns:ArrayOfTask" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Test" nillable="true" type="tns:Test" />
+  <xs:complexType name="ArrayOfTask">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Task" nillable="true" type="tns:Task" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTask" nillable="true" type="tns:ArrayOfTask" />
+  <xs:complexType name="Task">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Answers" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Difficult" type="xs:double" />
+      <xs:element minOccurs="0" name="RightAnswer" type="xs:int" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Task" nillable="true" type="tns:Task" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="TestPassage">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Answers" nillable="true" type="q2:ArrayOfint" />
+      <xs:element minOccurs="0" name="LastTask" type="xs:int" />
+      <xs:element minOccurs="0" name="Test" nillable="true" type="tns:Test" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TimeAnswer" nillable="true" type="q3:ArrayOfint" />
+      <xs:element minOccurs="0" name="TimeBegin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TimeEnd" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TestPassage" nillable="true" type="tns:TestPassage" />
+</xs:schema>

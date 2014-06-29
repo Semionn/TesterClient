@@ -1,0 +1,10 @@
+F:\Документы\Visual Studio 2010\Projects\TesterClient\TesterClient\bin\Debug\TesterClient.exe.config
+F:\Документы\Visual Studio 2010\Projects\TesterClient\TesterClient\bin\Debug\TesterClient.exe
+F:\Документы\Visual Studio 2010\Projects\TesterClient\TesterClient\bin\Debug\TesterClient.pdb
+F:\Документы\Visual Studio 2010\Projects\TesterClient\TesterClient\obj\x86\Debug\TesterClient.EnterForm.resources
+F:\Документы\Visual Studio 2010\Projects\TesterClient\TesterClient\obj\x86\Debug\TesterClient.MainForm.resources
+F:\Документы\Visual Studio 2010\Projects\TesterClient\TesterClient\obj\x86\Debug\TesterClient.Properties.Resources.resources
+F:\Документы\Visual Studio 2010\Projects\TesterClient\TesterClient\obj\x86\Debug\TesterClient.csproj.GenerateResource.Cache
+F:\Документы\Visual Studio 2010\Projects\TesterClient\TesterClient\obj\x86\Debug\TesterClient.exe
+F:\Документы\Visual Studio 2010\Projects\TesterClient\TesterClient\obj\x86\Debug\TesterClient.pdb
+F:\Документы\Visual Studio 2010\Projects\TesterClient\TesterClient\obj\x86\Debug\TesterClient.ResultsForm.resources
