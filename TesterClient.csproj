@@ -117,7 +117,7 @@
     <None Include="Service References\ServiceReference1\TesterClient.ServiceReference1.TestsTheme.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ServiceReference1\TesterClient.ServiceReference1.User.datasource">
+    <None Include="Service References\ServiceReference1\TesterClient.ServiceReference1.UserGroup.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
   </ItemGroup>

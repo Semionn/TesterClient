@@ -8,100 +8,6 @@
           <wsrm:AcknowledgementInterval Milliseconds="200" />
         </wsrm:RMAssertion>
         <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
-        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <wsp:Policy>
-            <sp:TransportToken>
-              <wsp:Policy>
-                <msf:SslTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy" />
-              </wsp:Policy>
-            </sp:TransportToken>
-            <sp:AlgorithmSuite>
-              <wsp:Policy>
-                <sp:Basic256 />
-              </wsp:Policy>
-            </sp:AlgorithmSuite>
-            <sp:Layout>
-              <wsp:Policy>
-                <sp:Strict />
-              </wsp:Policy>
-            </sp:Layout>
-            <sp:IncludeTimestamp />
-          </wsp:Policy>
-        </sp:TransportBinding>
-        <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <wsp:Policy>
-            <sp:SecureConversationToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
-              <wsp:Policy>
-                <sp:BootstrapPolicy>
-                  <wsp:Policy>
-                    <sp:SignedParts>
-                      <sp:Body />
-                      <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
-                      <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
-                      <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
-                      <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
-                      <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
-                      <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
-                      <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
-                    </sp:SignedParts>
-                    <sp:EncryptedParts>
-                      <sp:Body />
-                    </sp:EncryptedParts>
-                    <sp:TransportBinding>
-                      <wsp:Policy>
-                        <sp:TransportToken>
-                          <wsp:Policy>
-                            <msf:SslTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy" />
-                          </wsp:Policy>
-                        </sp:TransportToken>
-                        <sp:AlgorithmSuite>
-                          <wsp:Policy>
-                            <sp:Basic256 />
-                          </wsp:Policy>
-                        </sp:AlgorithmSuite>
-                        <sp:Layout>
-                          <wsp:Policy>
-                            <sp:Strict />
-                          </wsp:Policy>
-                        </sp:Layout>
-                        <sp:IncludeTimestamp />
-                      </wsp:Policy>
-                    </sp:TransportBinding>
-                    <sp:SignedSupportingTokens>
-                      <wsp:Policy>
-                        <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
-                          <wsp:Policy>
-                            <sp:WssUsernameToken10 />
-                          </wsp:Policy>
-                        </sp:UsernameToken>
-                      </wsp:Policy>
-                    </sp:SignedSupportingTokens>
-                    <sp:Wss11>
-                      <wsp:Policy />
-                    </sp:Wss11>
-                    <sp:Trust10>
-                      <wsp:Policy>
-                        <sp:MustSupportIssuedTokens />
-                        <sp:RequireClientEntropy />
-                        <sp:RequireServerEntropy />
-                      </wsp:Policy>
-                    </sp:Trust10>
-                  </wsp:Policy>
-                </sp:BootstrapPolicy>
-              </wsp:Policy>
-            </sp:SecureConversationToken>
-          </wsp:Policy>
-        </sp:EndorsingSupportingTokens>
-        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <wsp:Policy />
-        </sp:Wss11>
-        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
-          <wsp:Policy>
-            <sp:MustSupportIssuedTokens />
-            <sp:RequireClientEntropy />
-            <sp:RequireServerEntropy />
-          </wsp:Policy>
-        </sp:Trust10>
         <wsaw:UsingAddressing />
       </wsp:All>
     </wsp:ExactlyOne>
@@ -114,12 +20,6 @@
       <xsd:import schemaLocation="http://192.168.1.101:27401/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IService1_GetData_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetData" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetData_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataResponse" />
-  </wsdl:message>
   <wsdl:message name="IService1_GetAllTests_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllTests" />
   </wsdl:message>
@@ -144,11 +44,13 @@
   <wsdl:message name="IService1_Login_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoginResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetIRT_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIRT" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetIRT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIRTResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
-    <wsdl:operation name="GetData">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GetAllTests">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllTests" message="tns:IService1_GetAllTests_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllTestsResponse" message="tns:IService1_GetAllTests_OutputMessage" />
@@ -165,19 +67,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Login" message="tns:IService1_Login_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/LoginResponse" message="tns:IService1_Login_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetIRT">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetIRT" message="tns:IService1_GetIRT_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetIRTResponse" message="tns:IService1_GetIRT_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="tcpEndpoint" type="tns:IService1">
     <wsp:PolicyReference URI="#tcpEndpoint_policy" />
     <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
-    <wsdl:operation name="GetData">
-      <soap12:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="GetAllTests">
       <soap12:operation soapAction="http://tempuri.org/IService1/GetAllTests" style="document" />
       <wsdl:input>
@@ -214,15 +111,21 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetIRT">
+      <soap12:operation soapAction="http://tempuri.org/IService1/GetIRT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="Service1">
     <wsdl:port name="tcpEndpoint" binding="tns:tcpEndpoint">
       <soap12:address location="net.tcp://192.168.1.101:27400/" />
       <wsa10:EndpointReference>
         <wsa10:Address>net.tcp://192.168.1.101:27400/</wsa10:Address>
-        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Dns>localhost</Dns>
-        </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

@@ -60,7 +60,8 @@ namespace TesterClient
                 client.ClientCredentials.UserName.UserName = "unknonw";
                 client.ClientCredentials.UserName.Password = "1234";
                 client.Open();
-                students = client.GetAllUsers().ToList();
+                //students = client.GetAllUsers().Select(a => a.Users).ToList();
+                students = client.GetAllUsers().SelectMany(i => i.Users).ToList();
                 comboBoxLogin.DataSource = students.Select(a => a.Name).ToList();
             }
             catch (Exception ex)

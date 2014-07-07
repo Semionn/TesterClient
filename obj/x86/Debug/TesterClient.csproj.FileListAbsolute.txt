@@ -8,3 +8,14 @@ F:\Документы\Visual Studio 2010\Projects\TesterClient\TesterClient\obj\
 F:\Документы\Visual Studio 2010\Projects\TesterClient\TesterClient\obj\x86\Debug\TesterClient.exe
 F:\Документы\Visual Studio 2010\Projects\TesterClient\TesterClient\obj\x86\Debug\TesterClient.pdb
 F:\Документы\Visual Studio 2010\Projects\TesterClient\TesterClient\obj\x86\Debug\TesterClient.ResultsForm.resources
+F:\Документы\GitHub\TesterClient\TesterClient\bin\Debug\TesterClient.exe.config
+F:\Документы\GitHub\TesterClient\TesterClient\obj\x86\Debug\TesterClient.exe
+F:\Документы\GitHub\TesterClient\TesterClient\obj\x86\Debug\TesterClient.pdb
+F:\Документы\GitHub\TesterClient\TesterClient\bin\Debug\TesterClient.exe
+F:\Документы\GitHub\TesterClient\TesterClient\bin\Debug\TesterClient.pdb
+F:\Документы\GitHub\TesterClient\TesterClient\obj\x86\Debug\TesterClient.EnterForm.resources
+F:\Документы\GitHub\TesterClient\TesterClient\obj\x86\Debug\TesterClient.MainForm.resources
+F:\Документы\GitHub\TesterClient\TesterClient\obj\x86\Debug\TesterClient.Properties.Resources.resources
+F:\Документы\GitHub\TesterClient\TesterClient\obj\x86\Debug\TesterClient.ResultsForm.resources
+F:\Документы\GitHub\TesterClient\TesterClient\obj\x86\Debug\TesterClient.csproj.GenerateResource.Cache
+F:\Документы\GitHub\TesterClient\TesterClient\obj\x86\Debug\TesterClient.csprojResolveAssemblyReference.cache
